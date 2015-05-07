@@ -1,0 +1,1 @@
+A simple sample RESTful application created for Beer & Code 4 in Prishtina.  Leverages Spring Boot, Maven, MongoDb.
