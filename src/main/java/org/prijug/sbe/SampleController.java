@@ -1,6 +1,8 @@
 package org.prijug.sbe;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,13 +21,13 @@ public class SampleController {
         return "hello world";
     }
     
-    @RequestMapping(value = "blaaa/", method = RequestMethod.POST)
+    @PostMapping(value = "blaaa/")
     @ResponseBody
     public SampleEntity save(@RequestBody SampleEntity s){
         return sampleDAO.save(s);
     }
 
-    @RequestMapping(value = "blaaa/", method = RequestMethod.GET)
+    @GetMapping(value = "blaaa/")
     @ResponseBody
     public Iterable<SampleEntity> getAll(){
         return sampleDAO.findAll();
